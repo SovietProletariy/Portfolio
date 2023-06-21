@@ -5,15 +5,15 @@
     let todoList = [];
     function add() {
         if (newItem !== '') {
-            todoList = [
-                ...todoList,
-                {
-                задача: newItem,
-                завершено: false,
-                },
-            ];
-            newItem = '';
-        }
+                todoList = [
+                    ...todoList,
+                    {
+                        задача: newItem,
+                        завершено: false,
+                    },
+                ];
+                newItem = '';
+            }
     }
     function remove(index) {
         todoList.splice(index, 1);
@@ -22,16 +22,19 @@
     function complete(index) {
         todoList[index].completed = !todoList[index].completed;
     }
+
+
 </script>
+
 <main>
     <h1>My to-do list</h1>
     <form on:submit|preventDefault={add}>
-        <input bind:value={newItem} placeholder="Enter to-do" />
-        <button class="add-todo"on:click={add}><span>+</span></button>
+        <input bind:value={newItem}placeholder="Enter to-do" />
+        <button class="add-todo"
+       on:click={add}><span>+</span></button>
     </form>
     <div class="todos">
         {#each todoList as item, index}
-        <div class="todo" class:completed={item.completed}>
             <span class="todo__text">{item.task}</span>
             <div class="todo__buttons">
                 <button class="complete" on:click={() => complete(index)}>
@@ -40,12 +43,12 @@
                 <button class="delete" on:click={() => remove(index)}>
                     <Icon name="delete" />
                 </button>
-            </div>
-        </div>
+            </div>               
         {/each}
     </div>
        
 </main>
+
 <style>
     main {
         display: flex;
@@ -106,18 +109,15 @@
         font-size: 1.5rem;
         margin: 2em 0;
     }
-
     button {
         background-color: transparent;
         border: none;
     }
-    button.delete,
-    button.delete:hover {
+    button.delete, button.delete:hover {
         color: brown;
         transition: color 100ms ease-out;
     }
-    button.complete,
-    button.complete:hover {
+    button.complete, button.complete:hover {
         color: cadetblue;
         transition: color 100ms ease-out;
     }
@@ -131,8 +131,5 @@
         color: silver;
     }
 
-    .todos {
-        width: 100%;
-        max-width: 500px;
-    }
+
 </style>
