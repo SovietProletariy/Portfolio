@@ -27,22 +27,24 @@
         <input bind:value={newAmount} />
         <button class="add-todo"on:click={addExpense}><span>Добавить</span></button>
     </form>
-    <thead>
-        <tr>
-            <th>Название</th>
-            <th>Сумма</th>
-            <th>Деньги</th>
-        </tr>
-    </thead>
-    <tbody>
-        {#each expenses as expenses, i}
+    <table>
+        <thead>
             <tr>
-                <td><div>{expenses.name}</div></td>
-                <td><div>{expenses.amount}</div></td>
-                <td><button on:click={()=> deleteExpense(i)}>Удалить</button></td>
+                <th>Название</th>
+                <th>Сумма</th>
+                <th>Деньги</th>
             </tr>
-        {/each}
-</tbody>
+        </thead>
+        <tbody>
+            {#each expenses as expenses, i}
+                <tr>
+                    <td><div>{expenses.name}</div></td>
+                    <td><div>{expenses.amount}</div></td>
+                    <td><button on:click={()=> deleteExpense(i)}>Удалить</button></td>
+                </tr>
+            {/each}
+        </tbody>
+    </table>
        
 </main>
 <style>
