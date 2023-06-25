@@ -16,7 +16,7 @@
     }
 
     function deleteExpense(){
-        expenses.slice(index, 1)
+        expenses.splice(index, 1)
         expenses = expenses
     }
 </script>
@@ -25,7 +25,7 @@
     <form on:submit|preventDefault={addExpense}>
         <input bind:value={newName}/>
         <input bind:value={newAmount} />
-        <button class="add-todo"on:click={addExpense}><span>Добавить</span></button>
+        <button on:click={addExpense}><span>Добавить</span></button>
     </form>
     <table>
         <thead>
@@ -54,7 +54,7 @@
     }
     button{
         padding: 5px 10px;
-        background-color: #4caf50;
+        background-color: #006d04;
         color: white;
         border: none;
         border-radius: 5px;
@@ -73,18 +73,5 @@
         margin-top: 20px;
         border-collapse: collapse;
         width:100%;
-    }
-
-    input[type=text]{
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-right: 10px;
-        width: 150px;
-    }
-
-    label{
-        display: block;
-        margin-bottom: 10px;
     }
 </style>
