@@ -5,14 +5,16 @@
     let newAmount = '';
 
     function addExpense(){
-        const obj ={
-            name : newName,
-            amount: parseInt(newAmount),
-        };
-        expenses.push(obj);
-        expenses = expenses;
-        newName ='';
-        newAmount = '';
+        if (newAmount !== '') {
+            const obj ={
+                name : newName,
+                amount: parseInt(newAmount),
+            };
+            expenses.push(obj);
+            expenses = expenses;
+            newName ='';
+            newAmount = '';
+        }
     }
 
     function deleteExpense(index){
