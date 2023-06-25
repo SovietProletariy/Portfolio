@@ -10,12 +10,12 @@
             amount: parseInt(newAmount),
         };
         expenses.push(obj);
-        expenses = expenses
+        expenses = expenses;
         newName ='';
         newAmount = '';
     }
 
-    function deleteExpense(){
+    function deleteExpense(index){
         expenses.splice(index, 1)
         expenses = expenses
     }
