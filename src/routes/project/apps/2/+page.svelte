@@ -25,7 +25,9 @@
 <main>
     <h1>Учет расходов</h1>
     <form on:submit|preventDefault={addExpense}>
+        <h1>Название</h1>
         <input bind:value={newName}/>
+        <h1>Сумма</h1>
         <input bind:value={newAmount} />
         <button on:click={addExpense}><span>Добавить</span></button>
     </form>
